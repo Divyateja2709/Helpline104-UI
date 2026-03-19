@@ -179,7 +179,13 @@ export class BPScreeningComponent implements OnInit {
     }
 
     sortQuestionAnswers() {
+
+
         let form = {}
+
+        this.Questions = this.Questions.filter(
+            q => q.questionRank !== 0
+        );
         for (let i = 0; i < this.Questions.length; i++) {
 
             this.Questions[i].m_104QuestionScore.sort(function (a, b) {
